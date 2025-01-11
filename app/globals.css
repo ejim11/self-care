@@ -2,20 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  box-sizing: border-box;
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+
+@media all and (max-width: 600px) {
+  html {
+    /* 1rem = 9px */
+    font-size: 56.25%;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+input,
+textarea {
+  font-size: 16px !important;
 }
