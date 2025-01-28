@@ -15,6 +15,7 @@ export default {
       current: "curentColor",
       transparent: "transparent",
       "color-white": "#ffffff",
+      "color-black": "#000000",
     },
     screens: {
       "3xl": { max: "1535px" },
