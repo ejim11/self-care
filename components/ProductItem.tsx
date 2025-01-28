@@ -12,7 +12,7 @@ const ProductItem = ({
   image: StaticImageData;
   title: string;
   price: number;
-  percentOff?: number;
+  // percentOff?: number;
 }) => {
   // const newPrice = price - (percentOff / 100) * price;
   return (
