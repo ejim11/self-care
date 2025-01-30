@@ -5,7 +5,6 @@ import { FaInstagram, FaRegCircleCheck, FaTiktok } from "react-icons/fa6";
 import ProductsList from "./ProductsList";
 import { toastError, toastSuccess } from "@/utils/toastFuncs";
 import { LuBadgeAlert } from "react-icons/lu";
-import { mailUser } from "@/services/mailUserService";
 
 const HomeComp = () => {
   const iconClassname = "w-[2.5rem] h-[2.5rem] text-current";
