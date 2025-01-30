@@ -6,12 +6,14 @@ import React from "react";
 const ProductItem = ({
   image,
   title,
+  slug,
   price,
 }: // percentOff,
 {
   image: StaticImageData;
   title: string;
   price: number;
+  slug: string;
   // percentOff?: number;
 }) => {
   // const newPrice = price - (percentOff / 100) * price;
@@ -35,7 +37,7 @@ const ProductItem = ({
           {/* <p>{`(${percentOff}% off)`}</p> */}
         </div>
         <Link
-          href=""
+          href={`/${slug}`}
           className="bg-color-white w-full rounded-[0.6rem] text-center text-[rgb(16,16,16)] mt-[1rem] py-[0.5rem] font-medium"
         >
           Buy now
