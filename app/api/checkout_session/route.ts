@@ -3,8 +3,6 @@ import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "");
 
-console.log(process.env.STRIPE_SECRET_KEY);
-
 export async function POST(req, res) {
   // console.log(req);
   if (req.method === "POST") {
@@ -16,8 +14,8 @@ export async function POST(req, res) {
         line_items,
         mode: "payment",
 
-        success_url: `http://localhost:3000/?success=true?`,
-        cancel_url: `http://localhost:3000/?canceled=true`,
+        success_url: `${process.env.WEB_HOST}/?success=true?`,
+        cancel_url: `${process.env.WEB_HOST}/?canceled=true`,
       });
       console.log(session);
       return NextResponse.json({
