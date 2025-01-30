@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { DM_Sans, Inter } from "next/font/google";
 import "./globals.css";
+import AppWrapper from "@/components/AppWrapper";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,7 +40,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${dmSans.variable} antialiased`}>
-        {children}
+        <AppWrapper>{children}</AppWrapper>
+        <ToastContainer />
       </body>
     </html>
   );
