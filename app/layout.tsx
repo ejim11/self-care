@@ -20,14 +20,15 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   // metadataBase: new URL("https://www.qrest.ng/"),
   authors: [{ name: "Ejim Favour," }],
-  title: "Self Care",
-  description: "Caring for every aspect of your life",
+  title: "AI Power Bundle",
+  description: "Master AI for Business, Content Creation and Automation",
   openGraph: {
-    description: "Caring for every aspect of your life",
+    description: "Master AI for Business, Content Creation and Automation",
     type: "website",
-    // url: "https://www.qrest.ng/",
     images: [
-      { url: "https://i.ibb.co/FBC2nRL/Screenshot-2025-01-11-at-22-03-45.png" },
+      {
+        url: "https://i.ibb.co/V0NNZRjN/Screenshot-2025-02-26-at-13-50-44.png",
+      },
     ],
   },
 };
