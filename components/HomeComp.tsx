@@ -16,7 +16,7 @@ const HomeComp = () => {
     },
     {
       icon: <FaInstagram className={iconClassname} />,
-      link: "",
+      link: "https://www.instagram.com/dextterr__?igsh=MWUxYW8wcng5cWkyZg==",
     },
   ];
 
@@ -57,9 +57,21 @@ const HomeComp = () => {
     <main className="bg-home min-h-screen py-[5rem] px-[2rem]">
       <section className="w-full flex flex-col items-center text-color-white">
         <div className="w-[15rem] h-[15rem] rounded-full border flex items-center justify-center border-color-white ">
-          <p className="text-[5rem] font-bold font-dmsans">SC</p>
+          <p className="text-[5rem] font-bold font-dmsans">DX</p>
         </div>
-        <p className="my-[2rem] text-[3rem] font-bold ">Self Care</p>
+        <h1 className="my-[2rem] text-[3rem] font-bold text-center">
+          AI Power Bundle – The Ultimate AI Prompting & Productivity Toolkit
+        </h1>
+        <p className="mb-[4rem] text-[2rem] font-semibold text-center ">
+          Master AI for Business, Content Creation & Automation – All in One
+          Exclusive Bundle!
+        </p>
+        {/* <p className="mb-[4rem] text-[2rem] font-semibold text-center px-[10rem]">
+          Transform your business with our curated AI prompt library. We help
+          startups scale efficiently with ready-to-use AI directives that
+          streamline operations and deliver professional results—no technical
+          expertise needed.
+        </p> */}
         <div className="flex items-center">
           {iconLinks.map((link, i) => (
             <Link
