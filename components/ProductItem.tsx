@@ -18,8 +18,8 @@ const ProductItem = ({
 }) => {
   // const newPrice = price - (percentOff / 100) * price;
   return (
-    <div className="flex rounded-[1rem] overflow-hidden mb-[2.5rem] bg-[rgb(31,33,37)] sm:w-full sm:h-[20rem]">
-      <div className="w-[25rem] h-[20rem] sm:w-[16rem] sm:h-full">
+    <div className="flex rounded-[1rem] overflow-hidden mb-[2.5rem] bg-[rgb(31,33,37)] sm:w-full sm:h-[25rem]">
+      <div className="w-[25rem] h-[25rem] sm:w-[16rem] sm:h-full">
         <Image
           src={image}
           alt={`${title} image`}
