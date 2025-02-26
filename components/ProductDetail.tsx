@@ -8,6 +8,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useRouter } from "next/navigation";
 import { buyProduct } from "@/services/buyProductService";
 import { BallTriangle } from "react-loader-spinner";
+import { SiCheckio } from "react-icons/si";
 
 loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || "");
 
@@ -54,7 +55,14 @@ const ProductDetail = ({ productSlug }: { productSlug: string }) => {
           <p className="mt-[3rem] mb-[1.5rem] font-bold text-[1.8rem]">
             What you will get:
           </p>
-          <p>{product.detail}</p>
+          <ul>
+            {product.details.map((detail: string) => (
+              <li key={detail} className="flex items-center mb-[1.5rem]">
+                <SiCheckio className="w-[2.4rem] h-[2.4rem] mr-[1rem]" />
+                <p>{detail}</p>
+              </li>
+            ))}
+          </ul>
           <p className="mt-[3rem] mb-[1.5rem] font-bold text-[1.8rem]">
             About me:
           </p>
@@ -73,16 +81,15 @@ const ProductDetail = ({ productSlug }: { productSlug: string }) => {
             <Link
               className="text-[#74c0fc] font-semibold"
               href={
-                "https://www.instagram.com/dailyselfcarediary?igsh=eGVreXl1b2ZsMjk3&utm_source=qr"
+                "https://www.instagram.com/dextterr__?igsh=MWUxYW8wcng5cWkyZg=="
               }
               target="blank"
             >
-              @selfcare
+              @Dextterr_
             </Link>
           </p>
           <p>Do not share content once downloaded</p>
           <p className="mt-[2rem]">Thank you</p>
-          <p>Self care</p>
         </div>
         <div className="w-[50rem] md:w-full md:order-1 md:mb-[3rem] md:relative md:top-0  sticky top-[4rem] border rounded-[0.6rem] border-[#c3bebe] h-max p-[1.5rem]">
           <p className="text-[3rem] font-bold">{product.title}</p>
