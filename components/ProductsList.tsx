@@ -35,8 +35,7 @@ const ProductsList = () => {
   };
 
   return (
-    <div className="mt-[3rem] flex flex-col items-center font-dmsans w-full ">
-      <h1 className="mb-[2rem] text-[2rem] font-semibold">See our products</h1>
+    <div className="mt-[3rem] flex flex-col items-center font-dmsans w-[50%] xlg:w-[80%] xmd:w-full ">
       <div className="flex flex-col sm:w-full">
         {products.map((product: Product) => (
           <ProductItem
@@ -71,7 +70,7 @@ const ProductsList = () => {
             <>
               Buy all products{" "}
               <span className="line-through">{totalAmount}</span> $(
-              <span>{Math.round(0.61 * totalAmount)}</span>) - 40% off
+              <span>{Math.round(0.74 * totalAmount)}</span>) - 25% off
             </>
           )}
         </button>
