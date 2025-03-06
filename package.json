@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@stripe/stripe-js": "^5.6.0",
+    "framer-motion": "^12.4.10",
     "next": "^15.1.4",
     "nodemailer": "^6.10.0",
     "react": "^18.0.0",
