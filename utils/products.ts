@@ -23,9 +23,9 @@ const products: Product[] = [
     image: chatgptImg,
     slug: "chatgpt-simplified",
     details: [
-      "Understand AI fundamentals & how ChatGPT and other AI models work",
-      "Learn the science behind AI-generated content & automation",
-      "Master the basics of prompt engineering for better AI-generated responses",
+      "Unlock advanced prompt engineering techniques",
+      "Learn prompting techniques to get the best AI responses",
+      "Avoid common mistakes and optimize AI-generated outputs",
     ],
   },
   {
@@ -36,10 +36,9 @@ const products: Product[] = [
     image: generativeAIImg,
     slug: "the-ultimate-guide-to-generative-ai",
     details: [
-      "Learn how to use AI effectively",
-      "Gain access to high-quality AI prompts for various industries",
-      "Automate business workflows, marketing, and content creation",
-      "Stay ahead in AI-driven industries",
+      "Understand AI fundamentals & how ChatGPT and other AI models work",
+      "Learn the science behind AI-generated content & automation",
+      "Master the basics of prompt engineering for better AI-generated responses",
     ],
   },
   {
@@ -51,9 +50,9 @@ const products: Product[] = [
     image: highImpactGptImg,
     slug: "high-impact-chatgpt-prompts",
     details: [
-      "Unlock advanced prompt engineering techniques",
-      "Learn prompting techniques to get the best AI responses",
-      "Avoid common mistakes and optimize AI-generated outputs",
+      "A collection of 2,500+ expert-crafted prompts across 27 industries",
+      " Use AI for marketing, sales, content creation, finance, legal, healthcare, and more",
+      "Save time, improve workflow efficiency, and boost creativity with AI",
     ],
   },
   {
