@@ -18,8 +18,8 @@ const ProductItem = ({
 }) => {
   // const newPrice = price - (percentOff / 100) * price;
   return (
-    <div className="flex rounded-[1rem] overflow-hidden mb-[2.5rem] bg-[rgb(31,33,37)] sm:w-full sm:h-[25rem]">
-      <div className="w-[25rem] h-[25rem] sm:w-[16rem] sm:h-full">
+    <div className="flex rounded-[1rem] overflow-hidden mb-[2.5rem] bg-[rgb(31,33,37)] w-full sm:w-full sm:h-[25rem]">
+      <div className="w-[25rem] h-[30rem] sm:w-[16rem] sm:h-full">
         <Image
           src={image}
           alt={`${title} image`}
@@ -33,7 +33,9 @@ const ProductItem = ({
         <p className="capitalize font-semibold text-[1.8rem]">{title}</p>
         {/* <p className="mt-auto font-medium">${newPrice}</p> */}
         <div className="flex text-[rgba(254,254,254,0.75)] mt-auto">
-          <p className="mr-[1rem]">${price}</p>
+          <p className="mr-[1rem] text-[3rem] text-color-white font-semibold">
+            ${price}
+          </p>
           {/* <p>{`(${percentOff}% off)`}</p> */}
         </div>
         <Link
