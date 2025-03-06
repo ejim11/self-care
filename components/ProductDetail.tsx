@@ -35,13 +35,16 @@ const ProductDetail = ({ productSlug }: { productSlug: string }) => {
   };
 
   return (
-    <section className="w-full">
-      <div className="w-full h-[7rem] px-[5rem] xlg:px-[3rem] sm:px-[2rem] flex items-center">
-        <Link href={"/"}>
-          <IoIosArrowRoundBack className="text-color-black w-[3rem] h-[3rem]" />
+    <section className="w-full bg-home text-white">
+      <div className="w-full h-[7rem] px-[10rem] xlg:px-[3rem] sm:px-[2rem] flex items-center">
+        <Link
+          href={"/"}
+          className="w-[4rem] h-[4rem] flex items-center justify-center rounded-[0.6rem] border border-gray-400"
+        >
+          <IoIosArrowRoundBack className="text-color-white w-[3rem] h-[3rem]" />
         </Link>
       </div>
-      <div className="w-full flex md:flex-col justify-between px-[8rem] xlg:px-[3rem] sm:px-[2rem] relative mt-[2rem] pb-[5rem]">
+      <div className="w-full flex md:flex-col justify-between px-[10rem] xlg:px-[3rem] sm:px-[2rem] relative mt-[2rem] pb-[5rem]">
         <div className="flex-1  mr-[5rem] xmd:mr-[2.5rem] md:mr-0 md:order-2 flex flex-col">
           <div className="w-[50rem] md:w-full  h-[40rem]  rounded-[0.6rem] overflow-hidden">
             <Image
@@ -99,7 +102,7 @@ const ProductDetail = ({ productSlug }: { productSlug: string }) => {
           <button
             onClick={buyProductHandler}
             type="button"
-            className="w-full bg-color-black text-color-white py-[1rem] font-semibold text-[1.8rem] rounded-[0.6rem] mt-[2rem]"
+            className="w-full bg-gray-400 text-color-black py-[1rem] font-semibold text-[1.8rem] rounded-[0.6rem] mt-[2rem]"
           >
             {isLoading ? (
               <div className="w-full flex justify-center">
@@ -107,7 +110,7 @@ const ProductDetail = ({ productSlug }: { productSlug: string }) => {
                   height={30}
                   width={30}
                   radius={5}
-                  color="#ffffff"
+                  color="#000000"
                   ariaLabel="ball-triangle-loading"
                   wrapperStyle={{}}
                   wrapperClass="mx-auto"
