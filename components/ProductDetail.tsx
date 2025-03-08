@@ -1,7 +1,7 @@
 "use client";
 import products from "@/utils/products";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Image from "next/image";
 import { loadStripe } from "@stripe/stripe-js";
@@ -35,6 +35,10 @@ const ProductDetail = ({ productSlug }: { productSlug: string }) => {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: -90, behavior: "smooth" });
+  }, []);
 
   return (
     <section className="w-full bg-home text-white min-h-screen">
