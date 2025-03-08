@@ -97,7 +97,7 @@ const HomeComp = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.1, ease: "easeIn" }}
-              className=" text-[2rem] font-semibold  "
+              className=" text-[2rem]  sm:text-[1.8rem] "
             >
               Master AI for Business, Content Creation & Automation – All in One
               Exclusive Bundle!
@@ -106,7 +106,7 @@ const HomeComp = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.2, ease: "easeIn" }}
-              className="mb-[4rem] mt-[1rem] text-[2rem] font-semibold  "
+              className="mb-[4rem] mt-[1rem] text-[2rem] sm:text-[1.8rem]"
             >
               Transform your business with our curated AI prompt library. We
               help startups scale efficiently with ready-to-use AI directives
