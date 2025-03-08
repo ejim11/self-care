@@ -5,6 +5,7 @@ import ProductItem from "./ProductItem";
 import { useRouter } from "next/navigation";
 import { buyProduct } from "@/services/buyProductService";
 import { BallTriangle } from "react-loader-spinner";
+import Link from "next/link";
 
 const ProductsList = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -19,6 +20,7 @@ const ProductsList = () => {
     router.push(url);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const buyProductHandler = async () => {
     setIsLoading(true);
     try {
@@ -39,9 +41,10 @@ const ProductsList = () => {
       <h2 className="font-dmsans text-[3rem] font-semibold mb-[3rem] text-center">
         Power Bundles
       </h2>
-      <div className="grid grid-cols-2 w-full  pb-[5rem] gap-[5rem]">
-        {products.map((product: Product) => (
+      <div className="grid grid-cols-2 w-full xmd:grid-cols-1 pb-[5rem] gap-[5rem]">
+        {products.map((product: Product, i: number) => (
           <ProductItem
+            index={i}
             key={product.title}
             slug={product.slug}
             image={product.image}
@@ -52,10 +55,12 @@ const ProductsList = () => {
           />
         ))}
       </div>
-      <button
-        onClick={buyProductHandler}
-        type="button"
-        className="bg-color-white text-color-black text-[2rem] px-[3rem] py-[1rem] w-max  text-center rounded-[0.6rem] mt-[2rem] hover:bg-[#e9ecef] transition-all duration-100 ease-in "
+      <Link
+        href={"https://sandbox.flutterwave.com/pay/k75lhcghkz23"}
+        // onClick={buyProductHandler}
+        target="blank"
+        // type="button"
+        className="bg-color-white text-color-black text-[2rem] px-[3rem] py-[1rem] w-max xmd:w-full  text-center rounded-[0.6rem] mt-[2rem] hover:bg-[#e9ecef] transition-all duration-100 ease-in "
       >
         {isLoading ? (
           <div className="w-full  flex justify-center">
@@ -72,11 +77,11 @@ const ProductsList = () => {
           </div>
         ) : (
           <>
-            Buy all <span className="line-through">{totalAmount}</span> $(
-            <span>{Math.round(0.74 * totalAmount)}</span>) - 25% off
+            Buy all <span className="line-through">${totalAmount}</span> (
+            <span>${Math.round(0.74 * totalAmount)}</span>) - 25% off
           </>
         )}
-      </button>
+      </Link>
     </div>
   );
 };
