@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 const IndustriesCovered = () => {
@@ -37,13 +38,17 @@ const IndustriesCovered = () => {
         Industry Covered in the the AI Prompts Pack
       </h2>
       <ul className="flex flex-wrap justify-around">
-        {data.map((industry: string) => (
-          <li
+        {data.map((industry: string, index: number) => (
+          <motion.li
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: index * 0.05, ease: "easeIn" }}
             key={industry}
-            className="px-[2rem] py-[1rem] border border-white rounded-[1rem] mb-[2rem] bg-gray-700"
+            className="px-[2rem] py-[1rem] border border-white rounded-[1rem] mb-[2rem] bg-gray-700 mr-[2rem] last:mr-0"
           >
             {industry}
-          </li>
+          </motion.li>
         ))}
       </ul>
     </section>
