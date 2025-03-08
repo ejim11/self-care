@@ -9,6 +9,7 @@ export type Product = {
   title: string;
   price: number;
   percentOff: number;
+  paymentLink: string;
   image: StaticImageData;
   slug: string;
   details: string[];
@@ -22,6 +23,7 @@ const products: Product[] = [
     percentOff: 20,
     image: chatgptImg,
     slug: "chatgpt-simplified",
+    paymentLink: "https://sandbox.flutterwave.com/pay/mgdumxhttw8w",
     details: [
       "Unlock advanced prompt engineering techniques",
       "Learn prompting techniques to get the best AI responses",
@@ -33,6 +35,7 @@ const products: Product[] = [
     title: "The Ultimate Guide to Generative AI & Prompting",
     price: 35,
     percentOff: 20,
+    paymentLink: "https://sandbox.flutterwave.com/pay/6pkki7pug8lt",
     image: generativeAIImg,
     slug: "the-ultimate-guide-to-generative-ai",
     details: [
@@ -49,9 +52,10 @@ const products: Product[] = [
     percentOff: 25,
     image: highImpactGptImg,
     slug: "high-impact-chatgpt-prompts",
+    paymentLink: "https://sandbox.flutterwave.com/pay/timnaxi9icqe",
     details: [
       "A collection of 2,500+ expert-crafted prompts across 27 industries",
-      " Use AI for marketing, sales, content creation, finance, legal, healthcare, and more",
+      "Use AI for marketing, sales, content creation, finance, legal, healthcare, and more",
       "Save time, improve workflow efficiency, and boost creativity with AI",
     ],
   },
@@ -60,6 +64,7 @@ const products: Product[] = [
     title: "The Ultimate ChatGpt: Prompts Handbook",
     price: 15,
     percentOff: 20,
+    paymentLink: "https://sandbox.flutterwave.com/pay/6hzeqwgdbw7j",
     image: ultimateGptImg,
     slug: "the-ultimate-chatgpt",
     details: [
