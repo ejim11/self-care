@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -8,8 +9,10 @@ const ProductItem = ({
   title,
   slug,
   price,
+  index,
 }: // percentOff,
 {
+  index: number;
   image: StaticImageData;
   title: string;
   price: number;
@@ -18,7 +21,13 @@ const ProductItem = ({
 }) => {
   // const newPrice = price - (percentOff / 100) * price;
   return (
-    <div className="flex rounded-[1rem] overflow-hidden mb-[2.5rem] bg-[rgb(31,33,37)] w-full sm:w-full sm:h-[25rem]">
+    <motion.div
+      initial={{ opacity: 0, x: -30, y: 10 }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.3, delay: index * 0.1, ease: "easeIn" }}
+      className="flex rounded-[1rem] overflow-hidden mb-[2.5rem] bg-[rgb(31,33,37)] w-full sm:w-full sm:h-[25rem]"
+    >
       <div className="w-[25rem] h-[30rem] sm:w-[16rem] sm:h-full">
         <Image
           src={image}
@@ -45,7 +54,7 @@ const ProductItem = ({
           Buy now
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
