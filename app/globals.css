@@ -14,7 +14,7 @@ html {
   box-sizing: border-box;
   /* 1rem = 16px */
   font-size: 100%;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 @media all and (max-width: 2100px) {
