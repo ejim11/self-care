@@ -1,4 +1,5 @@
 "use client";
+import formatAmount from "@/utils/formatAmount";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
@@ -43,7 +44,7 @@ const ProductItem = ({
         {/* <p className="mt-auto font-medium">${newPrice}</p> */}
         <div className="flex text-[rgba(254,254,254,0.75)] mt-auto">
           <p className="mr-[1rem] text-[3rem] text-color-white font-semibold">
-            ${price}
+            N{formatAmount(String(price))}
           </p>
           {/* <p>{`(${percentOff}% off)`}</p> */}
         </div>
