@@ -19,11 +19,12 @@ const products: Product[] = [
   {
     priceId: "price_1QmvmZRC8367g7X7FDsc4iPS",
     title: "ChatGpt Simplified: Learn, Prompt and Succeed",
-    price: 25,
+    price: 2000,
     percentOff: 20,
     image: chatgptImg,
     slug: "chatgpt-simplified",
-    paymentLink: "https://sandbox.flutterwave.com/pay/mgdumxhttw8w",
+    paymentLink:
+      "https://paystack.com/buy/chatgpt-simplified-learn-prompt-and-succeed-oyqlsl",
     details: [
       "Unlock advanced prompt engineering techniques",
       "Learn prompting techniques to get the best AI responses",
@@ -33,9 +34,10 @@ const products: Product[] = [
   {
     priceId: "price_1QmvlNRC8367g7X7wNaJLrho",
     title: "The Ultimate Guide to Generative AI & Prompting",
-    price: 35,
+    price: 500,
     percentOff: 20,
-    paymentLink: "https://sandbox.flutterwave.com/pay/6pkki7pug8lt",
+    paymentLink:
+      "https://paystack.com/buy/the-ultimate-guide-to-generative-ai--prompting-dczuja",
     image: generativeAIImg,
     slug: "the-ultimate-guide-to-generative-ai",
     details: [
@@ -48,11 +50,12 @@ const products: Product[] = [
     priceId: "price_1QmvkMRC8367g7X7MXCXphib",
     title:
       "High Impact Chatgpt Prompts for Business, Creativity & Productivity",
-    price: 20,
+    price: 5000,
     percentOff: 25,
     image: highImpactGptImg,
     slug: "high-impact-chatgpt-prompts",
-    paymentLink: "https://sandbox.flutterwave.com/pay/timnaxi9icqe",
+    paymentLink:
+      "https://paystack.com/buy/high-impact-chatgpt-prompts-for-business-creativity---mtmwmn",
     details: [
       "A collection of 2,500+ expert-crafted prompts across 27 industries",
       "Use AI for marketing, sales, content creation, finance, legal, healthcare, and more",
@@ -62,9 +65,10 @@ const products: Product[] = [
   {
     priceId: "price_1QmvfsRC8367g7X7yMXQ8hIQ",
     title: "The Ultimate ChatGpt: Prompts Handbook",
-    price: 15,
+    price: 100,
     percentOff: 20,
-    paymentLink: "https://sandbox.flutterwave.com/pay/6hzeqwgdbw7j",
+    paymentLink:
+      "https://paystack.com/buy/the-ultimate-chatgpt-prompts-handbook-lbjsxq",
     image: ultimateGptImg,
     slug: "the-ultimate-chatgpt",
     details: [
