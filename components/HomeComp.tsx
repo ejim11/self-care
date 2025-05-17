@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { lazy, ReactNode, useEffect } from "react";
+import React, { lazy, ReactNode, useEffect, useState } from "react";
 import { FaInstagram, FaRegCircleCheck, FaTiktok } from "react-icons/fa6";
 import ProductsList from "./ProductsList";
 import { toastError, toastSuccess } from "@/utils/toastFuncs";
@@ -15,6 +15,12 @@ const PromptVideo = lazy(() => import("./PromptVideo"));
 
 const HomeComp = () => {
   const iconClassname = "w-[2.5rem] h-[2.5rem] text-current";
+
+  const [location, setLocation] = useState<{
+    latitude: null | number;
+    longitude: null | number;
+  }>({ latitude: null, longitude: null });
+  const [error, setError] = useState<null | string>(null);
 
   const iconLinks: { icon: ReactNode; link: string }[] = [
     {
@@ -39,37 +45,59 @@ const HomeComp = () => {
     },
   ];
 
-  useEffect(() => {
-    window.scrollTo({ top: -90, behavior: "smooth" });
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo({ top: -90, behavior: "smooth" });
+  // }, []);
+
+  // useEffect(() => {
+  //   // Check to see if this is a redirect back from Checkout
+  //   const query = new URLSearchParams(window.location.search);
+  //   if (query.get("success")) {
+  //     console.log("Order placed! You will receive an email confirmation.");
+  //     toastSuccess(
+  //       "Successful, check mail for item!",
+  //       <FaRegCircleCheck className="w-[2.3rem] h-[2.3rem] text-color-black" />
+  //     );
+
+  //     // mailUser(
+  //     //   "favourejim56@gmail.com",
+  //     //   "Thank you for buying a product! ",
+  //     //   product.title,
+  //     //   product.price
+  //     // );
+  //   }
+
+  //   if (query.get("canceled")) {
+  //     console.log(
+  //       "Order canceled -- continue to shop around and checkout when you’re ready."
+  //     );
+  //     toastError(
+  //       "Failed, try again!",
+  //       <LuBadgeAlert className="w-[2.3rem] h-[2.3rem] text-[red]" />
+  //     );
+  //   }
+  // }, []);
 
   useEffect(() => {
-    // Check to see if this is a redirect back from Checkout
-    const query = new URLSearchParams(window.location.search);
-    if (query.get("success")) {
-      console.log("Order placed! You will receive an email confirmation.");
-      toastSuccess(
-        "Successful, check mail for item!",
-        <FaRegCircleCheck className="w-[2.3rem] h-[2.3rem] text-color-black" />
-      );
-
-      // mailUser(
-      //   "favourejim56@gmail.com",
-      //   "Thank you for buying a product! ",
-      //   product.title,
-      //   product.price
-      // );
+    if (!navigator.geolocation) {
+      setError("Geolocation is not supported by your browser");
+      return;
     }
 
-    if (query.get("canceled")) {
-      console.log(
-        "Order canceled -- continue to shop around and checkout when you’re ready."
-      );
-      toastError(
-        "Failed, try again!",
-        <LuBadgeAlert className="w-[2.3rem] h-[2.3rem] text-[red]" />
-      );
-    }
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        console.log(position);
+        // setLocation({
+        //   latitude: position.coords.latitude,
+        //   longitude: position.coords.longitude,
+        // });
+      },
+      (err) => {
+        console.log(err);
+        setError(`Error: ${err.message}`);
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+    );
   }, []);
 
   return (
