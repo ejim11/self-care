@@ -1,10 +1,14 @@
 "use client";
 import Link from "next/link";
 import React, { lazy, ReactNode, useEffect, useState } from "react";
-import { FaInstagram, FaRegCircleCheck, FaTiktok } from "react-icons/fa6";
+import {
+  FaInstagram,
+  // FaRegCircleCheck,
+  FaTiktok,
+} from "react-icons/fa6";
 import ProductsList from "./ProductsList";
-import { toastError, toastSuccess } from "@/utils/toastFuncs";
-import { LuBadgeAlert } from "react-icons/lu";
+// import { toastError, toastSuccess } from "@/utils/toastFuncs";
+// import { LuBadgeAlert } from "react-icons/lu";
 import { FaFacebookSquare, FaTwitter, FaYoutube } from "react-icons/fa";
 import WhoIsTheBundleFor from "./WhoIsTheBundleFor";
 import IndustriesCovered from "./IndustriesCovered";
@@ -16,11 +20,13 @@ const PromptVideo = lazy(() => import("./PromptVideo"));
 const HomeComp = () => {
   const iconClassname = "w-[2.5rem] h-[2.5rem] text-current";
 
-  const [location, setLocation] = useState<{
-    latitude: null | number;
-    longitude: null | number;
-  }>({ latitude: null, longitude: null });
+  // const [location, setLocation] = useState<{
+  //   latitude: null | number;
+  //   longitude: null | number;
+  // }>({ latitude: null, longitude: null });
   const [error, setError] = useState<null | string>(null);
+
+  console.log(error);
 
   const iconLinks: { icon: ReactNode; link: string }[] = [
     {
