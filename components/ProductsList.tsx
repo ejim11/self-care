@@ -1,14 +1,26 @@
 "use client";
-import products, { Product } from "@/utils/products";
-import React from "react";
+import products, { Product } from "@/data/products";
+import React, { useContext } from "react";
 import ProductItem from "./ProductItem";
 import Link from "next/link";
 import formatAmount from "@/utils/formatAmount";
+import { appContext } from "@/store/appContext";
 
 const ProductsList = () => {
+
+  const {country} = useContext(appContext)
+
   const totalAmount = products
-    .map((product) => product.price)
+    .map((product) => {
+      if (country.toLowerCase() === "nigeria") {
+        return product.price;
+      } else {
+        return product.usdPrice;
+      }
+    })
     .reduce((acc, cur) => acc + cur, 0);
+
+  const discount = country.toLowerCase() === "nigeria" ? 0.6 : 0.5;
 
   return (
     <div className="mt-[10rem]  flex flex-col  font-dmsans w-full ">
@@ -24,8 +36,7 @@ const ProductsList = () => {
             image={product.image}
             title={product.title}
             price={product.price}
-
-            // percentOff={product.percentOff}
+            usdPrice = {product.usdPrice}
           />
         ))}
       </div>
@@ -34,12 +45,17 @@ const ProductsList = () => {
         target="blank"
         className="bg-color-white text-color-black text-[2rem] px-[3rem] py-[1rem] w-max xmd:w-full  text-center rounded-[0.6rem] mt-[2rem] hover:bg-[#e9ecef] transition-all duration-100 ease-in "
       >
-        Buy all
+        Buy all{" "}
         <span className="line-through">
-          N{formatAmount(String(totalAmount))}
+          {country.toLowerCase() === "nigeria" ? "N" : "$"}
+          {formatAmount(String(totalAmount))}
         </span>
-        (<span>N{formatAmount(String(Math.round(0.75 * totalAmount)))}</span>) -
-        25% off
+        (
+        <span>
+          {country.toLowerCase() === "nigeria" ? "N" : "$"}
+          {formatAmount(String(Math.round(discount * totalAmount)))}
+        </span>
+        ) - {(1 - discount) * 100}% off
       </Link>
     </div>
   );
