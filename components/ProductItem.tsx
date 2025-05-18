@@ -1,9 +1,10 @@
 "use client";
+import { appContext } from "@/store/appContext";
 import formatAmount from "@/utils/formatAmount";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 
 const ProductItem = ({
   image,
@@ -11,16 +12,18 @@ const ProductItem = ({
   slug,
   price,
   index,
-}: // percentOff,
-{
+  usdPrice,
+}: {
   index: number;
   image: StaticImageData;
   title: string;
   price: number;
   slug: string;
-  // percentOff?: number;
+  usdPrice: number;
 }) => {
-  // const newPrice = price - (percentOff / 100) * price;
+  const { country } = useContext(appContext);
+
+  const itemPrice = country.toLowerCase() === "nigeria" ? price : usdPrice;
   return (
     <motion.div
       initial={{ opacity: 0, x: -30, y: 10 }}
@@ -44,7 +47,8 @@ const ProductItem = ({
         {/* <p className="mt-auto font-medium">${newPrice}</p> */}
         <div className="flex text-[rgba(254,254,254,0.75)] mt-auto">
           <p className="mr-[1rem] text-[3rem] text-color-white font-semibold">
-            N{formatAmount(String(price))}
+            {country.toLowerCase() === "nigeria" ? "N" : "$"}
+            {formatAmount(String(itemPrice))}
           </p>
           {/* <p>{`(${percentOff}% off)`}</p> */}
         </div>
