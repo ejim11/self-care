@@ -1,18 +1,21 @@
 "use client";
-import products from "@/utils/products";
+import products from "@/data/products";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Image from "next/image";
-import { loadStripe } from "@stripe/stripe-js";
 import { SiCheckio } from "react-icons/si";
 import { motion } from "framer-motion";
 import formatAmount from "@/utils/formatAmount";
-
-loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || "");
+import { appContext } from "@/store/appContext";
 
 const ProductDetail = ({ productSlug }: { productSlug: string }) => {
+  const { country } = useContext(appContext);
+
   const product = products.filter((prd) => prd.slug === productSlug)[0];
+
+  const itemPrice =
+    country.toLowerCase() === "nigeria" ? product.price : product.usdPrice;
 
   useEffect(() => {
     window.scrollTo({ top: -90, behavior: "smooth" });
@@ -102,7 +105,8 @@ const ProductDetail = ({ productSlug }: { productSlug: string }) => {
         <div className="w-[50rem] xmd:w-full xmd:order-1 xmd:mb-[3rem] xmd:relative xmd:top-0  sticky top-[4rem] border rounded-[0.6rem] border-[#c3bebe] h-max p-[1.5rem]">
           <p className="text-[3rem] font-bold">{product.title}</p>
           <p className="text-[2.5rem] font-semibold">
-            N{formatAmount(String(product.price))}
+            {country.toLowerCase() === "nigeria" ? "N" : "$"}
+            {formatAmount(String(itemPrice))}
           </p>
           <Link
             target="blank"
